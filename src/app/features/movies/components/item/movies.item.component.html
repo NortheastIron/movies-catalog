@@ -1,0 +1,26 @@
+<article class="app-movies-item"
+         [appPopupTrigger]="isPopup()"
+         (popupOpened)="onPopupOpened()"
+         (popupClosed)="onPopupClosed()">
+    <div class="app-movies-item__card">
+        <figure class="app-movies-item__card__img">
+            <img [src]="data().img" onerror="this.style.display='none'">
+        </figure>
+        <div class="app-movies-item__card__info">
+            <h3 class="app-movies-item__card__info__name">
+                {{data().name || 'Без названия'}}
+            </h3>
+            <time class="app-movies-item__card__info__year" [dateTime]="data().year">
+                {{data().year || '- - -'}}
+            </time>
+        </div>
+    </div>
+
+
+    @if (isPopup()) {
+        <app-movies-popup
+            [data]="data()" 
+            (popupEvents)="onPopupHandlerEvents($event)"
+        ></app-movies-popup>
+    }
+</article>

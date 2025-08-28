@@ -1,0 +1,1 @@
+export type { AppEvents } from './app-events.type';

@@ -1,0 +1,24 @@
+<main class="app-movies-page">
+    <header class="app-movies-page__header" role="banner">
+        <h1>Каталог фильмов</h1>
+    </header>
+    <aside class="app-movies-page__filters" aria-label="Фильтры">
+        <mat-form-field>
+            <mat-label>Поиск фильмов...</mat-label>
+              <input matInput [(ngModel)]="filters.name"/>
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </aside>
+
+    <app-loading-indicator [isLoading]="isLoading()"></app-loading-indicator>
+    <app-error-box [error]="error()" (appEvents)="onHandleErrorBoxEvent($event)"></app-error-box>
+
+    <section class="app-movies-page__list" aria-label="Список фильмов" [appLoadingState]="isLoading()">
+        <div class="app-movies-page__list__content">
+            @for (movie of movies(); track movie.id) {
+             <app-movies-item [data]="movie">
+            </app-movies-item>
+            }
+        </div>
+    </section>
+</main>

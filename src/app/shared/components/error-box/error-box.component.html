@@ -1,0 +1,16 @@
+@if (error() && !isStrongClose) {
+    <div class="app-error-box" aria-label="Сообщение об ошибке" role="alertdialog" aria-modal="true">
+        <header class="app-error-box__header">
+            <span class="app-error-box__header__title">Ошибка</span>
+            <button matIconButton class="control-button" (click)="onClose()" aria-label="Закрыть сообщение">
+                <mat-icon>close</mat-icon>
+            </button>
+        </header>
+        <div class="app-error-box__title">
+            {{ error() }}
+        </div>
+        <footer class="app-error-box__actions">
+            <button mat-stroked-button color="basic" (click)="loadData()">Попробовать снова</button>
+        </footer>
+    </div>
+}

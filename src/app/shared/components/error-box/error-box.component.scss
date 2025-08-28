@@ -1,0 +1,32 @@
+.app-error-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    min-width: 300px;
+    z-index: 100000;
+    background-color: #ffffff;
+    border: 1px solid currentColor;
+    border-radius: 10px;
+    padding: 5px 20px 20px 20px;
+    text-align: center;
+
+    &__header {
+        display: flex;
+        height: 24px;
+        align-items: center;
+        justify-content: space-between;
+
+        &__title {
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+
+    &__title {
+        overflow-wrap: break-word;
+        margin: 15px 0;
+        color: #c91616;
+    }
+}

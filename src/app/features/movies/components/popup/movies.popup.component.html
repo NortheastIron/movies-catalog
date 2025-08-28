@@ -1,0 +1,31 @@
+<div #popupElement class="app-movies-popup"  [ngStyle]="popStyle()" role="dialog" aria-labelledby="popup-title" aria-modal="true">
+    <header class="app-movies-popup__header">
+        <button matIconButton class="control-button" (click)="onClose()" aria-label="Закрыть сообщение">
+            <mat-icon>close</mat-icon>
+        </button>
+    </header>
+    <div class="app-movies-popup__content">
+        <figure class="app-movies-popup__content__img">
+            <img [src]="data().img" onerror="this.style.display='none'">
+        </figure>
+        <div class="app-movies-popup__content__data">
+            <h3 id="popup-title" class="app-movies-popup__content__data__name">{{ data().name }}</h3>
+            <time class="app-movies-popup__content__data__year">
+                {{ data().year}}
+            </time>
+            <div class="app-movies-popup__content__data__genres" role="list">
+                @for (genre of genresNames(); track $index) {
+                    <div class="app-movies-popup__content__data__genres__genre" role="listitem">
+                        {{ genre }}
+                    </div>
+                }
+            </div>
+            <div class="app-movies-popup__content__data__description">
+                {{ data().description }}
+            </div>
+            <div class="app-movies-popup__content__data__rate">
+                <span>{{ data().rate }}</span>
+            </div>
+        </div>
+    </div>
+</div>

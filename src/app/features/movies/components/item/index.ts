@@ -1,0 +1,1 @@
+export { MoviesItemComponent } from './movies.item.component';

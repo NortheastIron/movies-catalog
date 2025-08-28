@@ -1,0 +1,1 @@
+export { MoviesPopupEvent } from './movies.popup.event.enum';

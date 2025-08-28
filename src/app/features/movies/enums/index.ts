@@ -1,0 +1,1 @@
+export { MoviesGenres } from './movies.genres.enum';
