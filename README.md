@@ -8,3 +8,9 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
     npm install
     npm start
 ```
+
+## Ответы на вопросы
+
+```
+    answersToQuestions.txt
+```
